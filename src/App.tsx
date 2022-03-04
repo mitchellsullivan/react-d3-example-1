@@ -6,6 +6,7 @@ import RadialChart from './visualizations/RadialChart';
 import Chart from './visualizations/Chart';
 import {WeatherDay} from "./types/data";
 import BarChartHooks from "./visualizations/BarChartHooks";
+import LineChartHooks from "./visualizations/LineChartHooks";
 
 
 const App: React.FC = ({}) => {
@@ -58,7 +59,7 @@ const App: React.FC = ({}) => {
         *warning: these are <em>not</em> meant to be good examples of data visualizations,<br/>
         but just to show the possibility of using D3 and React*
       </p>
-      <LineChart data={data}/>
+      <LineChartHooks data={data}/>
       <BarChartHooks data={data}/>
       {/*<BarChart data={data}/>*/}
       <br/>
