@@ -7,7 +7,8 @@ https://youtu.be/zXBdNDnqV2Q
 Goals:
 - Class components and lifecycle methods to functional components and hooks.
 - JavaScript to TypeScript
-- Learning D3
+- Learn D3
+- Show that I can do something, because I've been jobless for a really long time. 
 
 Run with `npm start`.
 
