@@ -5,10 +5,12 @@ import BarChartHooks from "./visualizations/BarChartHooks";
 import LineChartHooks from "./visualizations/LineChartHooks";
 import RadialChartHooks from "./visualizations/RadialChartHooks";
 
+type TempSet = {
+  [key: string]: WeatherDay[]
+}
+
 const App: React.FC = ({}) => {
-  const [temps, setTemps] = React.useState<{
-    [key: string]: WeatherDay[]
-  }>({});
+  const [temps, setTemps] = React.useState<TempSet>({});
   const [city, setCity] = React.useState('sf');
 
   React.useEffect(() => {

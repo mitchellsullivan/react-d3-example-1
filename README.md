@@ -4,5 +4,7 @@ Forked from https://github.com/sxywu/react-d3-example.git after seeing the talk 
 <br>
 https://youtu.be/zXBdNDnqV2Q
 
-Adapted from class components and lifecycle methods to functional components and hooks.
+Adaptations:
+- Class components and lifecycle methods to functional components and hooks.
+- JavaScript to TypeScript
 
