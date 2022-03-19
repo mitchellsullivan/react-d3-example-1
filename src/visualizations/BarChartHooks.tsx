@@ -2,11 +2,17 @@ import React from 'react';
 import * as d3 from 'd3';
 import * as chroma from 'chroma-js';
 import {WeatherDay} from '../types/data';
-import {BarChartRectangle} from '../types/chart';
 
 const width = 650;
 const height = 400;
-const margin = {top: 20, right: 5, bottom: 20, left: 35};
+
+const margin = {
+  top: 20,
+  right: 5,
+  bottom: 20,
+  left: 35
+};
+
 const red = '#eb6a5b';
 const green = '#b6e86f';
 const blue = '#52b6ca';
@@ -16,7 +22,15 @@ type BarChartHooksProps = {
   data: WeatherDay[]
 }
 
-const BarChartHooks: React.FC<BarChartHooksProps> = ({data}) => {
+export type BarChartRectangle = {
+  x: number;
+  y: number;
+  height: number;
+  fill: any;
+}
+
+
+const BarChartHooks: React.FC<BarChartHooksProps> = ({ data}) => {
   const yAxisRef = React.useRef<SVGGElement>(null);
   const xAxisRef = React.useRef<SVGGElement>(null);
 
@@ -74,13 +88,14 @@ const BarChartHooks: React.FC<BarChartHooksProps> = ({data}) => {
 
     setBars(bars);
 
-
   }, [data]);
 
   return (
     <svg width={width} height={height}>
-      {bars.map((d, i) =>
-        (<rect key={i} x={d.x} y={d.y} width='2' height={d.height} fill={d.fill} />))}
+      {
+        bars.map((d, i) =>
+          (<rect key={i} x={d.x} y={d.y} width='2' height={d.height} fill={d.fill} />))
+      }
       <g>
         <g ref={xAxisRef} transform={`translate(0, ${height - margin.bottom})`}/>
         <g ref={yAxisRef} transform={`translate(${margin.left}, 0)`}/>

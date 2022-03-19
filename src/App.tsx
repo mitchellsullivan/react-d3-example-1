@@ -1,13 +1,9 @@
 import React, {ChangeEvent, Component} from 'react';
 import './App.css';
-import LineChart from './visualizations/LineChart';
-import BarChart from './visualizations/BarChart';
-import RadialChart from './visualizations/RadialChart';
-import Chart from './visualizations/Chart';
 import {WeatherDay} from "./types/data";
 import BarChartHooks from "./visualizations/BarChartHooks";
 import LineChartHooks from "./visualizations/LineChartHooks";
-
+import RadialChartHooks from "./visualizations/RadialChartHooks";
 
 const App: React.FC = ({}) => {
   const [temps, setTemps] = React.useState<{
@@ -61,9 +57,9 @@ const App: React.FC = ({}) => {
       </p>
       <LineChartHooks data={data}/>
       <BarChartHooks data={data}/>
-      {/*<BarChart data={data}/>*/}
+      <RadialChartHooks data={data}/>
       <br/>
-      {/*<RadialChart data={data}/>*/}
+
 
       <p>
         (Weather data from <a href='wunderground.com' target='_new'>wunderground.com</a>)
